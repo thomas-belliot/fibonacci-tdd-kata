@@ -45,15 +45,12 @@ def fibonacci(n):
     Input : an integer n >= 0
     Output : fibonacci number of n
     """
-    return -1
-    """
     if n==0:
         return 0
     if n==1:
         return 1
     else:
         return fibonacci(n-1) + fibonacci(n-2)
-    """
 
 
 @app.function
