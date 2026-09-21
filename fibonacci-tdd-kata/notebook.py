@@ -45,12 +45,30 @@ def fibonacci(n):
     Input : an integer n >= 0
     Output : fibonacci number of n
     """
+    return -1
+    """
     if n==0:
         return 0
     if n==1:
         return 1
     else:
         return fibonacci(n-1) + fibonacci(n-2)
+    """
+
+
+@app.function
+def test_v1_fibonacci():
+    assert fibonacci(0) == 0
+    assert fibonacci(1) == 1
+    assert fibonacci(8) == 21
+    assert fibonacci(12) == 144
+    assert fibonacci(15) == 610
+    return
+
+
+@app.cell
+def _():
+    return
 
 
 if __name__ == "__main__":
