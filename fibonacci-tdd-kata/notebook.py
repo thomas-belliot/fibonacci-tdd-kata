@@ -2,6 +2,7 @@
 # requires-python = ">=3.12"
 # dependencies = [
 #     "marimo>=0.24.2",
+#     "numpy==2.5.3",
 #     "pytest==9.1.1",
 # ]
 # ///
@@ -32,7 +33,7 @@ def _():
        are automatically detected and run by pytest.
     2. **From the command line**:
        ```bash
-       uv run pytest tdd_fizzbuzz_marimo_en.py
+       uv run pytest notebook.py
        ```
     """)
     return
@@ -62,6 +63,7 @@ def test_v1_fibonacci():
     assert fibonacci(8) == 21
     assert fibonacci(12) == 144
     assert fibonacci(15) == 610
+    # For n=100, I stopped my computer at 3min of compilation, without having reach the result in the mean time.
     return
 
 
@@ -107,6 +109,43 @@ def _(n_input):
     except ValueError as e:
         output = mo.md(f"⚠️ Error: {e}")
     output
+    return
+
+
+@app.cell
+def _():
+    # "Refactor and optimize your code to reduce the computation time of your Fibonacci function"
+    # Examples on this website : https://www.datacamp.com/fr/tutorial/fibonacci-sequence-python
+    import numpy as np
+
+    def fibonacci_matrix(n):
+    	def matrix_power(matrix, power):
+    		return np.linalg.matrix_power(matrix, power)
+    	if n == 0:
+    		return 0
+    	matrix = np.array([[1, 1], [1, 0]])
+    	result = matrix_power(matrix, n-1)
+    	return result[0][0]
+
+    return (fibonacci_matrix,)
+
+
+@app.cell
+def _(fibonacci_matrix):
+    def test_v2_fibonacci_matrix():
+        assert fibonacci_matrix(0) == 0
+        assert fibonacci_matrix(1) == 1
+        assert fibonacci_matrix(8) == 21
+        assert fibonacci_matrix(12) == 144
+        assert fibonacci_matrix(15) == 610
+        # This time the result is almost immediate for more larger than 100 value of n !
+        assert fibonacci_matrix(100) == 3736710778780434371
+        assert fibonacci_matrix(500) == 2171430676560690477
+        assert fibonacci_matrix(1000) == 817770325994397771
+        assert fibonacci_matrix(5000) == 535601498209671957
+    
+        return
+
     return
 
 
