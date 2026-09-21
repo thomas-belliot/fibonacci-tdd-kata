@@ -45,7 +45,8 @@ def fibonacci(n):
     Input : an integer n >= 0
     Output : fibonacci number of n
     """
-    assert n >= 0
+    if not isinstance(n, int) or n<0:
+        raise ValueError("n must be an integer an positive")
     if n==0:
         return 0
     if n==1:
@@ -61,6 +62,51 @@ def test_v1_fibonacci():
     assert fibonacci(8) == 21
     assert fibonacci(12) == 144
     assert fibonacci(15) == 610
+    return
+
+
+@app.function
+@pytest.mark.parametrize(
+    ("n", "expected"),
+    [
+        (0, 0),
+        (1, 1),
+        (2, 1),
+        (3, 2),
+        (5, 5),
+        (6, 8),
+        (10, 55),
+        (15, 610),
+    ],
+)
+def test_cases(n, expected):
+    assert fibonacci(n) == expected
+
+
+@app.function
+def test_fibonacci_rejects_invalid_input():
+    with pytest.raises(ValueError):
+        fibonacci(-5)
+    with pytest.raises(ValueError):
+        fibonacci(-9)
+    return
+
+
+@app.cell
+def _():
+    n_input = mo.ui.number(start=1, stop=1000, step=1, value=15, label="n")
+    n_input
+    return (n_input,)
+
+
+@app.cell
+def _(n_input):
+    try:
+        result = fibonacci(n_input.value)
+        output = mo.md(f"`fibonacci({n_input.value})` → **{result}**")
+    except ValueError as e:
+        output = mo.md(f"⚠️ Error: {e}")
+    output
     return
 
 
