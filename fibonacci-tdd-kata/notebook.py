@@ -45,6 +45,7 @@ def fibonacci(n):
     Input : an integer n >= 0
     Output : fibonacci number of n
     """
+    assert n >= 0
     if n==0:
         return 0
     if n==1:
