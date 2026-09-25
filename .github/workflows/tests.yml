@@ -10,11 +10,18 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: ["3.11", "3.12", "3.13"]
+
+    defaults:
+      run:
+        working-directory: fibonacci-tdd-kata
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -28,4 +35,4 @@ jobs:
         run: uv run ruff check .
 
       - name: Run tests
-        run: uv run pytest --cov=src --cov-report=term-missing
+        run: uv run pytest --cov=src/fibonacci_tdd_kata --cov-report=term-missing
