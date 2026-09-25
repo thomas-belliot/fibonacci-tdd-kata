@@ -9,7 +9,7 @@
 
 import marimo
 
-__generated_with = "0.24.2"
+__generated_with = "0.25.0"
 app = marimo.App(width="medium")
 
 with app.setup:
@@ -112,13 +112,20 @@ def _(n_input):
     return
 
 
-@app.cell
-def _():
-    # "Refactor and optimize your code to reduce the computation time of your Fibonacci function"
+app._unparsable_cell(
+    """
+    # \"Refactor and optimize your code to reduce the computation time of your Fibonacci function\"
     # Examples on this website : https://www.datacamp.com/fr/tutorial/fibonacci-sequence-python
     import numpy as np
 
     def fibonacci_matrix(n):
+        \"\"\"
+        Returns the fibonacci number for the integer n
+        Input : an integer n >= 0
+        Output : fibonacci number of n
+        \"\"\"
+        if not isinstance(n, int) or n<0:
+            raise ValueError(\"n must be an integer an positive\")
     	def matrix_power(matrix, power):
     		return np.linalg.matrix_power(matrix, power)
     	if n == 0:
@@ -126,8 +133,9 @@ def _():
     	matrix = np.array([[1, 1], [1, 0]])
     	result = matrix_power(matrix, n-1)
     	return result[0][0]
-
-    return (fibonacci_matrix,)
+    """,
+    name="_"
+)
 
 
 @app.cell
@@ -143,7 +151,7 @@ def _(fibonacci_matrix):
         assert fibonacci_matrix(500) == 2171430676560690477
         assert fibonacci_matrix(1000) == 817770325994397771
         assert fibonacci_matrix(5000) == 535601498209671957
-    
+
         return
 
     return
