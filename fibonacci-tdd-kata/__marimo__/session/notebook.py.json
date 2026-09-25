@@ -1,0 +1,82 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.0",
+    "script_metadata_hash": "27926105cda66edb1fe76f6ac4b81b93"
+  },
+  "cells": [
+    {
+      "id": "setup",
+      "code_hash": "6f40f30abab5849aaf986862372ee9b3",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "b55b43d478704a039438539f0daca3e8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"tdd-demo-fibonacci-with-marimo\">TDD Demo: Fibonacci with marimo</h1>\n<span class=\"paragraph\">This notebook illustrates the <strong>Red \u2192 Green \u2192 Refactor</strong> cycle of\nTest-Driven Development. Each section below corresponds to a\ndevelopment step where we <strong>grow the contract</strong> of the\n<code>fibonnacci</code> function one test at a time.</span>\n<span class=\"paragraph\">You can run the tests in two ways:</span>\n<ol>\n<li><strong>Inside marimo</strong>: cells whose name starts with <code>test_</code>\n   are automatically detected and run by pytest.</li>\n<li><strong>From the command line</strong>:\n   <div class=\"language-bash codehilite\"><pre><span></span><code>uv<span class=\"w\"> </span>run<span class=\"w\"> </span>pytest<span class=\"w\"> </span>notebook.py\n</code></pre></div></li>\n</ol></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "ae95cc54cc48227b2b9ae03ce469b976",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "c5e934ad11dbffa9693a8443a42835c8",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "d9d28c09d5c25b56c11c06f5e4754047",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "fdd996576f12aa0faf1d32c17a005f3d",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "1d2a1e611f864977356c7b1b2a077849",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "33aed313cf02990c7ddbe6461be6c8b7",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "80dc841fff1f5aa74f6417c78d93aa7b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "8e13e860ffb38eeb95ef2335e5d611a9",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
