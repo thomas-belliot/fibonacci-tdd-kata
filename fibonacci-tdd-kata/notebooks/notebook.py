@@ -45,14 +45,14 @@ def fibonacci(n):
     Input : an integer n >= 0
     Output : fibonacci number of n
     """
-    if not isinstance(n, int) or n<0:
+    if not isinstance(n, int) or n < 0:
         raise ValueError("n must be an integer an positive")
-    if n==0:
+    if n == 0:
         return 0
-    if n==1:
+    if n == 1:
         return 1
     else:
-        return fibonacci(n-1) + fibonacci(n-2)
+        return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 @app.function
@@ -62,7 +62,8 @@ def test_v1_fibonacci():
     assert fibonacci(8) == 21
     assert fibonacci(12) == 144
     assert fibonacci(15) == 610
-    # For n=100, I stopped my computer at 3min of compilation, without having reach the result in the mean time.
+    # For n=100, I stopped my computer at 3min of compilation,
+    # without having reach the result in the mean time.
 
 
 @app.function
@@ -121,15 +122,15 @@ app._unparsable_cell(
         \"\"\"
         if not isinstance(n, int) or n<0:
             raise ValueError(\"n must be an integer an positive\")
-    	def matrix_power(matrix, power):
-    		return np.linalg.matrix_power(matrix, power)
-    	if n == 0:
-    		return 0
-    	matrix = np.array([[1, 1], [1, 0]])
-    	result = matrix_power(matrix, n-1)
-    	return result[0][0]
+        def matrix_power(matrix, power):
+            return np.linalg.matrix_power(matrix, power)
+        if n == 0:
+            return 0
+        matrix = np.array([[1, 1], [1, 0]])
+        result = matrix_power(matrix, n-1)
+        return result[0][0]
     """,
-    name="_"
+    name="_",
 )
 
 
@@ -146,8 +147,6 @@ def _(fibonacci_matrix):
         assert fibonacci_matrix(500) == 2171430676560690477
         assert fibonacci_matrix(1000) == 817770325994397771
         assert fibonacci_matrix(5000) == 535601498209671957
-
-
 
 
 @app.cell
