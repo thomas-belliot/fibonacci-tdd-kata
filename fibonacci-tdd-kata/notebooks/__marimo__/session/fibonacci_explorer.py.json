@@ -1,0 +1,53 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.0",
+    "script_metadata_hash": "d4dc9240be4cf573020563793f0412b5"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "b56b4840ad677c2c6c682c4e4b4cb2c8",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "No module named 'fibonacci_tdd_kata'",
+          "traceback": null
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">\"/tmp/marimo_11497/__marimo__cell_Hbol_.py\"</span>, line <span class=\"m\">5</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"kn\">from</span><span class=\"w\"> </span><span class=\"nn\">fibonacci_tdd_kata</span><span class=\"w\"> </span><span class=\"kn\">import</span> <span class=\"n\">fibonacci</span>\n<span class=\"gr\">ModuleNotFoundError</span>: <span class=\"n\">No module named 'fibonacci_tdd_kata'</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "0264d98dfe3b63093f3cdfd2ac3ffbeb",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "fe871400cf16dcc32bdaa735019339f4",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "ed1d58eda96d58758f524611744239b0",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
