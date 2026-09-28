@@ -1,16 +1,26 @@
 # src/fizzbuzz_kata/cli.py
 """Command-line interface for fizzbuzz_kata."""
+
 import argparse
+
 from fibonacci_tdd_kata.core import fibonacci
 
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="fibonacci-kata", 
-                                     description="Print the fibonacci value for one number, or a range of numbers.",
-                                     )
-    parser.add_argument("n", type=int, nargs="?", help="A single number to convert (ignored if --start/--end are given).", )
+    parser = argparse.ArgumentParser(
+        prog="fibonacci-kata",
+        description="Print the fibonacci value for one number, or a range of numbers.",
+    )
+    parser.add_argument(
+        "n",
+        type=int,
+        nargs="?",
+        help="A single number to convert (ignored if --start/--end are given).",
+    )
     parser.add_argument("--start", type=int, help="Start of a range (inclusive).")
     parser.add_argument("--end", type=int, help="End of a range (inclusive).")
     return parser
+
 
 def main() -> None:
     parser = build_parser()

@@ -6,9 +6,9 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
+
     import marimo as mo
     import matplotlib.pyplot as plt
-    from collections import Counter
 
     from fibonacci_tdd_kata import fibonacci
 
@@ -39,7 +39,6 @@ def _(mo):
 def _(end, fibonacci, start):
     lo, hi = sorted((start.value, end.value))
     results = [fibonacci(n) for n in range(lo, hi + 1)]
-    results
     return hi, lo, results
 
 
@@ -49,10 +48,10 @@ def _(hi, lo, plt, results):
     # triggers AttributeError : 'int' object has no attribute 'isdigit'
 
     counts = {}
-    assert(hi-lo+1==len(results))
+    assert hi - lo + 1 == len(results)
 
-    for k in range(lo, hi+1):
-        counts[k] = results[k-lo]
+    for k in range(lo, hi + 1):
+        counts[k] = results[k - lo]
 
     fig, ax = plt.subplots()
     ax.bar(
@@ -62,7 +61,6 @@ def _(hi, lo, plt, results):
     )
     ax.set_ylabel("Count")
     ax.set_title("Distribution of Fibonacci outputs over the selected range")
-    fig
     return
 
 
