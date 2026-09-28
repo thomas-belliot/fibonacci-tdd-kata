@@ -18,11 +18,7 @@ async def _(mo):
     if sys.platform == "emscripten":
         import micropip
 
-        wheel = (
-            mo.notebook_location()
-            / "public"
-            / "fibonacci_tdd_kata-0.1.0-py3-none-any.whl"
-        )
+        wheel = mo.notebook_location() / "public" / "fibonacci_tdd_kata-0.1.0-py3-none-any.whl"
 
         await micropip.install(str(wheel))
 
@@ -74,10 +70,7 @@ def _(mo):
 def _(end, fibonacci, start):
     lo, hi = sorted((start.value, end.value))
 
-    results = [
-        fibonacci(n)
-        for n in range(lo, hi + 1)
-    ]
+    results = [fibonacci(n) for n in range(lo, hi + 1)]
 
     return hi, lo, results
 
@@ -100,11 +93,7 @@ def _(hi, lo, plt, results):
 
     ax.set_xlabel("n")
     ax.set_ylabel("Fibonacci(n)")
-    ax.set_title(
-        "Fibonacci values over the selected range"
-    )
-
-    fig
+    ax.set_title("Fibonacci values over the selected range")
 
     return
 
