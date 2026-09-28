@@ -25,6 +25,15 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
+      - name: Debug repository structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Files:"
+          ls -la
+          echo "pyproject.toml locations:"
+          find . -name "pyproject.toml" -print
+
       - name: Install dependencies
         run: uv sync --locked --all-groups
 
